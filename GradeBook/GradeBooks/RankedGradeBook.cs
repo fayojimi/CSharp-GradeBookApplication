@@ -18,8 +18,8 @@ namespace GradeBook.GradeBooks
             {
                 throw new InvalidOperationException("Ranked grading requires a minimum of 5 students to work");
             }
-            int count = Students.Where(e => e.AverageGrade > averageGrade).Count()+1;
-            double percentage = count / Students.Count;
+            double count = Students.Where(e => e.AverageGrade > averageGrade).Count()+1.0;
+            double percentage = count / (Students.Count+1.0);
             if (percentage <= 0.2)
             {
                 return 'A';
